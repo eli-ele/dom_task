@@ -21,3 +21,24 @@ box("grid", "center", "center", "center", "300px", "300px", "FloralWhite", "20px
 box("grid", "center", "center", "center", "300px", "300px", "Gainsboro", "20px", "20px","CSS", "https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/121-css3-512.png","CSS is the language we use to style an HTML document.");
 box("grid", "center", "center", "center", "300px", "300px", "GhostWhite", "20px", "20px", "JS", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQshmob4BF86aGKJnQx36peCRfhjRgOK6qO-OgpQ2XKrdximXWlry8rpcAnpdckKtHkSmo&usqp=CAU","JavaScript is the world's most popular programming language.");
 
+ 
+const input1 = document.getElementById('input1');
+const button = document.getElementById('button');
+const result = document.getElementById('result');
+
+
+let list = [];
+button.addEventListener('click', () => {
+    const todo_value = input1.value;
+    list.push(todo_value);
+    console.log(list);
+
+    localStorage.setItem('todo',JSON.stringify(list))
+    const getItem = JSON.parse(localStorage.getItem('todo'));
+
+    getItem.forEach((task) => {
+        result.innerHTML = `
+       <li>${task}</li>`
+    })
+    input1.value = "";
+ })

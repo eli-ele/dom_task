@@ -6,6 +6,7 @@ export function createBox(width, height, box_backgroundColor) {
     box.style.backgroundColor = box_backgroundColor;
     main_container.appendChild(box);
 }
+
 const container = document.getElementById("container");
 container.style.display = "flex";
 container.style.justifyContent = "center";
